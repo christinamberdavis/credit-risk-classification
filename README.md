@@ -43,14 +43,14 @@ I then used logistic regression to predict each loan applicant's classification 
 ## **Part 3: Create a Logistic Regression Model with Oversampled Data**
 Because high-risk applicants are underrepresented in the original data, I built a 2nd logistic regression model using oversampled data. This increased the number of high-risk applicants relative to low-risk. The result was a model that can better predict who should be classified as high-risk. 
 
-Confusion Matrix:
+####Confusion Matrix:
           predicted 0  predicted 1
-actual 0        18668           91
-actual 1            2          623
+    actual 0        18668           91
+    actual 1            2          623
 
 
-Accuracy Score:
-0.9959744975744975
+####Accuracy Score:
+    0.9959744975744975
 
 
 Classification Report:
@@ -60,8 +60,8 @@ Classification Report:
            1       0.87      1.00      0.93       625
 
     accuracy                           1.00     19384
-   macro avg       0.94      1.00      0.96     19384
-weighted avg       1.00      1.00      1.00     19384
+    macro avg       0.94      1.00      0.96     19384
+    weighted avg       1.00      1.00      1.00     19384
 
 
 
