@@ -20,12 +20,12 @@ I then used logistic regression to predict each loan applicant's classification 
 
 #### Confusion Matrix:
           predicted 0  predicted 1
-  actual 0        18679           80
-  actual 1           67          558
+    actual 0        18679           80
+    actual 1           67          558
 
 
 #### Accuracy Score:
-  0.9442676901753825
+    0.9442676901753825
 
 
 #### Classification Report:
@@ -35,7 +35,7 @@ I then used logistic regression to predict each loan applicant's classification 
            1       0.87      0.89      0.88       625
 
     accuracy                           0.99     19384
-   macro avg       0.94      0.94      0.94     19384
+    macro avg       0.94      0.94      0.94     19384
     weighted avg       0.99      0.99      0.99     19384
 
 
