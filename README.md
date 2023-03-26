@@ -18,17 +18,17 @@ I loaded the csv file into a Pandas dataframe, and from there split the data int
 ## **Part 2: Create a Logistic Regression Model with the Original Data**
 I then used logistic regression to predict each loan applicant's classification as high-risk or low-risk. I created a confusion matrix to validate the model. 
 
-Confusion Matrix:
+#### Confusion Matrix:
           predicted 0  predicted 1
 actual 0        18679           80
 actual 1           67          558
 
 
-Accuracy Score:
+#### Accuracy Score:
 0.9442676901753825
 
 
-Classification Report:
+#### Classification Report:
               precision    recall  f1-score   support
 
            0       1.00      1.00      1.00     18759
