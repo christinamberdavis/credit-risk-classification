@@ -2,33 +2,67 @@
 - - -
 
 ## **Background:**
-This project was created as part of a data anlaytics bootcamp. The goal is to use Python and supervised learning to predict if cryptocurrencies are affected by 24-hour or 7-day price changes.
+This project was created as part of a data anlaytics bootcamp. The goal is to use Python and supervised learning to build a model that can identify the creditworthiness of borrowers using a dataset of historical lending activity from a peer-to-peer lending services company.
 
 Relevant Files:
-- [Crypto Clustering Jupyter Notebook](Crypto_Clustering.ipynb)
-    -The data analysis was completed in this notebook.
+- [Credit Risk Classification Jupyter Notebook](Credit_Risk/credit_risk_classification.ipynb)
+    -The data analysis is completed in this notebook.
 - Resources
-  - [crypto_market_data.csv](Resources/crypto_market_data.csv)
+  - [lending_data.csv](Resources/lending_data.csv)
   -This data was provided as part of the exercise. 
-- Images
-  - saved images of the data
-
-## **Part 1: Scaling the Data**
-I loaded the csv file into a Pandas dataframe, and from there prepared the data using the StandardScaler module from scikit-learn to normalize it. 
-![Original Data before scaling](Images/df_market_image.png)
-
-## **Part 2: Finding the best value for k and clustering the scaled data**
-I then used the elbow method to find the best value for k, which is 4. Two currencies were grouped in clusters of their own, while the other currencies were grouped among the last 2 clusters. 
 
 
-## **Part 3: Finding the best value for k and clustering using PCA**
-Next, I used principal component analysis to condense the features of the scaled data down to 3. I then again used the elbow method to find the best value for k, which is 4, and clustered the currencies. Once again, the same 2 currencies were grouped in clusters of their own while the other currencies were grouped among the last 2 clusters. 
+## **Part 1: Splitting the Data into Training and Testing Sets**
+I loaded the csv file into a Pandas dataframe, and from there split the data into training and testing sets. 
 
-## **Results**
-Condensing the number of features down to 3 did not change how the currencies were grouped nor what the best value for k is. 
+## **Part 2: Create a Logistic Regression Model with the Original Data**
+I then used logistic regression to predict each loan applicant's classification as high-risk or low-risk. I created a confusion matrix to validate the model. 
 
-![Composite Elbow Curves for Scaled and PCA Data](Images/composite_elbow_image.png)
-![Composite Scatter Charts for Scaled and PCA Data](Images/pca_composite_image.png)
+Confusion Matrix:
+          predicted 0  predicted 1
+actual 0        18679           80
+actual 1           67          558
+
+
+Accuracy Score:
+0.9442676901753825
+
+
+Classification Report:
+              precision    recall  f1-score   support
+
+           0       1.00      1.00      1.00     18759
+           1       0.87      0.89      0.88       625
+
+    accuracy                           0.99     19384
+   macro avg       0.94      0.94      0.94     19384
+weighted avg       0.99      0.99      0.99     19384
+
+
+
+## **Part 3: Create a Logistic Regression Model with Oversampled Data**
+Because high-risk applicants are underrepresented in the original data, I built a 2nd logistic regression model using oversampled data. This increased the number of high-risk applicants relative to low-risk. The result was a model that can better predict who should be classified as high-risk. 
+
+Confusion Matrix:
+          predicted 0  predicted 1
+actual 0        18668           91
+actual 1            2          623
+
+
+Accuracy Score:
+0.9959744975744975
+
+
+Classification Report:
+              precision    recall  f1-score   support
+
+           0       1.00      1.00      1.00     18759
+           1       0.87      1.00      0.93       625
+
+    accuracy                           1.00     19384
+   macro avg       0.94      1.00      0.96     19384
+weighted avg       1.00      1.00      1.00     19384
+
 
 
 - - -
@@ -38,9 +72,9 @@ Condensing the number of features down to 3 did not change how the currencies we
 1. Clone the repo to your computer.
    - [How to Clone Github Repo](https://docs.github.com/en/repositories/creating-and-managing-repositories/cloning-a-repository)
 
-2. Open the CryptoClustering folder in VS Code on your personal computer.
+2. Open the Credit-Risk-Classification folder in VS Code on your personal computer.
 
-3. Navigate to the [Crypto Clustering Jupyter Notebook](Crypto_Clustering.ipynb) file in the folder.
+3. Navigate to the [Credit Risk Classification Jupyter Notebook](Credit_Risk/credit_risk_classification.ipynb) file in the folder.
 
 4. Connect to your kernal. 
 
